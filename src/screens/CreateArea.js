@@ -2,16 +2,16 @@ import { Button, Container, Content, Input, Item, View } from "native-base";
 import React, { Component } from "react";
 import { StyleSheet, Text } from "react-native";
 
-export default class CreateShortCut extends Component {
+export default class CreateArea extends Component {
   render() {
     return (
       <Container style={styles.container}>
         <Content>
           <View>
-            <Text style={styles.heading}>Create a ShortCut</Text>
+            <Text style={styles.heading}>Create an area</Text>
           </View>
           <Item regular style={styles.inputBox}>
-            <Input placeholder="Type shortcut name here" />
+            <Input placeholder="Type area name here" />
           </Item>
         </Content>
         <Button block style={styles.nextButton}>
