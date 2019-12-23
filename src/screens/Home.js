@@ -1,19 +1,16 @@
 import { Container, Tab, Tabs } from "native-base";
 import React, { Component } from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, SafeAreaView } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import FloatingButton from "../components/FloatingButton";
-import Section from "./Section";
+import Section from "../components/Section";
 
 export default class Home extends Component {
   static navigationOptions = {
-    headerTitle: "Otome",
-    headerStyle: {
-      backgroundColor: "#000C66"
-    },
+    title: "Otome",
     headerTintColor: "#FFF",
-    headerTitleStyle: {
-      fontWeight: "bold"
+    headerStyle: {
+      backgroundColor: "#1f1f1f"
     }
   };
 
@@ -21,18 +18,14 @@ export default class Home extends Component {
     const { navigation } = this.props;
     return (
       <Container style={styles.container}>
-        <Tabs tabBarUnderlineStyle={{ backgroundColor: "transparent" }}>
+        <Tabs tabBarUnderlineStyle={{ backgroundColor: "#FFF" }}>
           <Tab
-            heading="Home"
-            activeTextStyle={styles.activeTabStyle}
-            textStyle={{ color: "#FFF", fontSize: 18 }}
-            tabStyle={{ backgroundColor: "#000C66" }}
-            activeTabStyle={{
-              backgroundColor: "#000C66",
-              color: "#FFF",
-              border: 0
-            }}
-            style={{ backgroundColor: "#3F51B5" }}
+            heading="HOME"
+            activeTextStyle={styles.activeTextStyle}
+            textStyle={styles.textStyle}
+            tabStyle={styles.tabStyle}
+            activeTabStyle={styles.activeTabStyle}
+            style={styles.tabBody}
           >
             <ScrollView>
               <Section title={"Shortcuts"} />
@@ -41,16 +34,12 @@ export default class Home extends Component {
             <FloatingButton navigation={navigation} />
           </Tab>
           <Tab
-            heading="Live"
-            activeTextStyle={styles.activeTabStyle}
-            textStyle={{ color: "#FFF", fontSize: 18 }}
-            tabStyle={{ backgroundColor: "#000C66" }}
-            activeTabStyle={{
-              backgroundColor: "#000C66",
-              color: "#FFF",
-              border: 0
-            }}
-            style={{ backgroundColor: "#FFFFF1" }}
+            heading="LIVE"
+            activeTextStyle={styles.activeTextStyle}
+            textStyle={styles.textStyle}
+            tabStyle={styles.tabStyle}
+            activeTabStyle={styles.activeTabStyle}
+            style={styles.tabBody}
           >
             <ScrollView>
               <Section title={"Shortcuts"} />
@@ -58,16 +47,12 @@ export default class Home extends Component {
             </ScrollView>
           </Tab>
           <Tab
-            heading="Area"
-            activeTextStyle={styles.activeTabStyle}
-            textStyle={{ color: "#FFF", fontSize: 18 }}
-            tabStyle={{ backgroundColor: "#000C66" }}
-            activeTabStyle={{
-              backgroundColor: "#000C66",
-              color: "#FFF",
-              border: 0
-            }}
-            style={{ backgroundColor: "#FFFFF1" }}
+            heading="SHORTCUTS"
+            activeTextStyle={styles.activeTextStyle}
+            textStyle={styles.textStyle}
+            tabStyle={styles.tabStyle}
+            activeTabStyle={styles.activeTabStyle}
+            style={styles.tabBody}
           >
             <ScrollView>
               <Section title={"Shortcuts"} />
@@ -75,16 +60,12 @@ export default class Home extends Component {
             </ScrollView>
           </Tab>
           <Tab
-            heading="Shortcuts"
-            activeTextStyle={styles.activeTabStyle}
-            textStyle={{ color: "#FFF", fontSize: 18 }}
-            tabStyle={{ backgroundColor: "#000C66" }}
-            activeTabStyle={{
-              backgroundColor: "#000C66",
-              color: "#FFF",
-              border: 0
-            }}
-            style={{ backgroundColor: "#FFFFF1" }}
+            heading="AREAS"
+            activeTextStyle={styles.activeTextStyle}
+            textStyle={styles.textStyle}
+            tabStyle={styles.tabStyle}
+            activeTabStyle={styles.activeTabStyle}
+            style={styles.tabBody}
           >
             <ScrollView>
               <Section title={"Shortcuts"} />
@@ -96,21 +77,33 @@ export default class Home extends Component {
     );
   }
 }
+const tabColor = "#1f1f1f";
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#00001a"
+    backgroundColor: "#101010"
+  },
+  activeTextStyle: {
+    color: "#FFF",
+    fontSize: 13
+  },
+  textStyle: {
+    color: "#D3D3D3",
+    fontSize: 13
+  },
+  tabStyle: {
+    backgroundColor: tabColor
   },
   activeTabStyle: {
-    color: "#FFF",
-    fontWeight: "600",
-    fontSize: 18
+    backgroundColor: tabColor,
+    color: "#FFF"
   },
   header: {
     color: "#fff",
     fontSize: 18,
     fontWeight: "400",
     margin: 12
-  }
+  },
+  tabBody: { backgroundColor: "#101010" }
 });

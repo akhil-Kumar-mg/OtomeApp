@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { SafeAreaView, FlatList, StyleSheet } from "react-native";
 import OtomeCard from "./OtomeCard";
 
-export default class CardList extends Component {
+export default class List extends Component {
   render() {
     return (
       <SafeAreaView style={styles.container}>

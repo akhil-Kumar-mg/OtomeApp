@@ -7,7 +7,7 @@ export default floatingButton = props => {
     <View style={{ flex: 1 }}>
       <Fab
         direction="up"
-        style={{ backgroundColor: "#5067FF" }}
+        style={{ backgroundColor: "green" }}
         position="bottomRight"
         onPress={() => props.navigation.navigate("ACTION_LIST")}
       >
